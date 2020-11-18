@@ -1,0 +1,772 @@
+{
+  "contractName": "ECRecoverTest",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "digest",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint8",
+          "name": "v",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "s",
+          "type": "bytes32"
+        }
+      ],
+      "name": "recover",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"digest\",\"type\":\"bytes32\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"recover\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/test/ECRecoverTest.sol\":\"ECRecoverTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/test/ECRecoverTest.sol\":{\"keccak256\":\"0xa681615cf7eaf71c1a4e44fe708eb4ac40d4b6145e2a5e53395ae5786a8cee21\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1c350ba149e3c269dc97428ab181149bcddfe2b8b396a1ba7724ccb84da8427d\",\"dweb:/ipfs/QmPX27zciBh37yCaJAcn9tss2EXFJwQzTrnUzAFWLZUhkX\"]},\"/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/util/ECRecover.sol\":{\"keccak256\":\"0xf5cfda38bb499bb2ca422f89c0de3a2886fe2ce64dc98332ff2df4c65d345ded\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f4fbf53a0a6c36a87dabbfc4c4f90632de57bbcd072cd7a3250e9563707d696c\",\"dweb:/ipfs/QmYeNdoS6obcEZxKwxr31yFEx6H72Mw1NPUUMtahVdFpE9\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610346806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063c2bf17b014610030575b600080fd5b61007d6004803603608081101561004657600080fd5b8101908080359060200190929190803560ff16906020019092919080359060200190929190803590602001909291905050506100a9565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60006100b7858585856100c1565b9050949350505050565b60007f7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a08260001c111561013f576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806102eb6026913960400191505060405180910390fd5b601b8460ff16141580156101575750601c8460ff1614155b156101ad576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806102c56026913960400191505060405180910390fd5b600060018686868660405160008152602001604052604051808581526020018460ff1681526020018381526020018281526020019450505050506020604051602081039080840390855afa158015610209573d6000803e3d6000fd5b505050602060405103519050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156102b8576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f45435265636f7665723a20696e76616c6964207369676e61747572650000000081525060200191505060405180910390fd5b8091505094935050505056fe45435265636f7665723a20696e76616c6964207369676e6174757265202776272076616c756545435265636f7665723a20696e76616c6964207369676e6174757265202773272076616c7565a26469706673582212201eac62fbfe3fef98303e482ba684007aca1f3892effc2ea4dd3e9d0219bc6ec564736f6c63430007040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063c2bf17b014610030575b600080fd5b61007d6004803603608081101561004657600080fd5b8101908080359060200190929190803560ff16906020019092919080359060200190929190803590602001909291905050506100a9565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60006100b7858585856100c1565b9050949350505050565b60007f7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a08260001c111561013f576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806102eb6026913960400191505060405180910390fd5b601b8460ff16141580156101575750601c8460ff1614155b156101ad576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260268152602001806102c56026913960400191505060405180910390fd5b600060018686868660405160008152602001604052604051808581526020018460ff1681526020018381526020018281526020019450505050506020604051602081039080840390855afa158015610209573d6000803e3d6000fd5b505050602060405103519050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156102b8576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601c8152602001807f45435265636f7665723a20696e76616c6964207369676e61747572650000000081525060200191505060405180910390fd5b8091505094935050505056fe45435265636f7665723a20696e76616c6964207369676e6174757265202776272076616c756545435265636f7665723a20696e76616c6964207369676e6174757265202773272076616c7565a26469706673582212201eac62fbfe3fef98303e482ba684007aca1f3892effc2ea4dd3e9d0219bc6ec564736f6c63430007040033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "1259:232:6:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "1259:232:6:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1289:199;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;1419:7;1446:34;1464:6;1472:1;1475;1478;1446:17;:34::i;:::-;1439:41;;1289:199;;;;;;:::o;1867:1587:14:-;1997:7;2944:66;2926:1;2918:10;;:92;2900:197;;;3037:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2900:197;3118:2;3113:1;:7;;;;:18;;;;;3129:2;3124:1;:7;;;;3113:18;3109:99;;;3148:48;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3109:99;3305:14;3322:26;3332:6;3340:1;3343;3346;3322:26;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3305:43;;3385:1;3367:20;;:6;:20;;;;3359:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3440:6;3433:13;;;1867:1587;;;;;;:::o",
+  "source": "/**\r\n * SPDX-License-Identifier: MIT\r\n *\r\n * Copyright (c) 2020 DYCLUDE\r\n *\r\n * Permission is hereby granted, free of charge, to any person obtaining a copy\r\n * of this software and associated documentation files (the \"Software\"), to deal\r\n * in the Software without restriction, including without limitation the rights\r\n * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n * copies of the Software, and to permit persons to whom the Software is\r\n * furnished to do so, subject to the following conditions:\r\n *\r\n * The above copyright notice and this permission notice shall be included in\r\n * copies or substantial portions of the Software.\r\n *\r\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n * SOFTWARE.\r\n */\r\n\r\npragma solidity >=0.4.22 <0.8.0;\r\n\r\nimport { ECRecover } from \"../util/ECRecover.sol\";\r\n\r\ncontract ECRecoverTest {\r\n    function recover(\r\n        bytes32 digest,\r\n        uint8 v,\r\n        bytes32 r,\r\n        bytes32 s\r\n    ) external pure returns (address) {\r\n        return ECRecover.recover(digest, v, r, s);\r\n    }\r\n}\r\n",
+  "sourcePath": "C:/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/test/ECRecoverTest.sol",
+  "ast": {
+    "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/test/ECRecoverTest.sol",
+    "exportedSymbols": {
+      "ECRecover": [
+        996
+      ],
+      "ECRecoverTest": [
+        355
+      ]
+    },
+    "id": 356,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 330,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1169:32:6"
+      },
+      {
+        "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/util/ECRecover.sol",
+        "file": "../util/ECRecover.sol",
+        "id": 332,
+        "nodeType": "ImportDirective",
+        "scope": 356,
+        "sourceUnit": 997,
+        "src": "1205:50:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 331,
+              "name": "ECRecover",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "1214:9:6",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 355,
+        "linearizedBaseContracts": [
+          355
+        ],
+        "name": "ECRecoverTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 353,
+              "nodeType": "Block",
+              "src": "1428:60:6",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 347,
+                        "name": "digest",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 334,
+                        "src": "1464:6:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "id": 348,
+                        "name": "v",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 336,
+                        "src": "1472:1:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "id": 349,
+                        "name": "r",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 338,
+                        "src": "1475:1:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "id": 350,
+                        "name": "s",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 340,
+                        "src": "1478:1:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "id": 345,
+                        "name": "ECRecover",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 996,
+                        "src": "1446:9:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ECRecover_$996_$",
+                          "typeString": "type(library ECRecover)"
+                        }
+                      },
+                      "id": 346,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "recover",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 995,
+                      "src": "1446:17:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$_t_address_$",
+                        "typeString": "function (bytes32,uint8,bytes32,bytes32) pure returns (address)"
+                      }
+                    },
+                    "id": 351,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1446:34:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 344,
+                  "id": 352,
+                  "nodeType": "Return",
+                  "src": "1439:41:6"
+                }
+              ]
+            },
+            "functionSelector": "c2bf17b0",
+            "id": 354,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "recover",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 341,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 334,
+                  "mutability": "mutable",
+                  "name": "digest",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1316:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 333,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1316:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 336,
+                  "mutability": "mutable",
+                  "name": "v",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1341:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 335,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1341:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 338,
+                  "mutability": "mutable",
+                  "name": "r",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1359:9:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 337,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1359:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 340,
+                  "mutability": "mutable",
+                  "name": "s",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1379:9:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 339,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1379:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1305:90:6"
+            },
+            "returnParameters": {
+              "id": 344,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 343,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1419:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 342,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1419:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1418:9:6"
+            },
+            "scope": 355,
+            "src": "1289:199:6",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 356,
+        "src": "1259:232:6"
+      }
+    ],
+    "src": "1169:324:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/test/ECRecoverTest.sol",
+    "exportedSymbols": {
+      "ECRecover": [
+        996
+      ],
+      "ECRecoverTest": [
+        355
+      ]
+    },
+    "id": 356,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 330,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1169:32:6"
+      },
+      {
+        "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/util/ECRecover.sol",
+        "file": "../util/ECRecover.sol",
+        "id": 332,
+        "nodeType": "ImportDirective",
+        "scope": 356,
+        "sourceUnit": 997,
+        "src": "1205:50:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 331,
+              "name": "ECRecover",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "1214:9:6",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 355,
+        "linearizedBaseContracts": [
+          355
+        ],
+        "name": "ECRecoverTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 353,
+              "nodeType": "Block",
+              "src": "1428:60:6",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 347,
+                        "name": "digest",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 334,
+                        "src": "1464:6:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "id": 348,
+                        "name": "v",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 336,
+                        "src": "1472:1:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        }
+                      },
+                      {
+                        "id": 349,
+                        "name": "r",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 338,
+                        "src": "1475:1:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "id": 350,
+                        "name": "s",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 340,
+                        "src": "1478:1:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_uint8",
+                          "typeString": "uint8"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "id": 345,
+                        "name": "ECRecover",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 996,
+                        "src": "1446:9:6",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ECRecover_$996_$",
+                          "typeString": "type(library ECRecover)"
+                        }
+                      },
+                      "id": 346,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "recover",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 995,
+                      "src": "1446:17:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$_t_address_$",
+                        "typeString": "function (bytes32,uint8,bytes32,bytes32) pure returns (address)"
+                      }
+                    },
+                    "id": 351,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1446:34:6",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 344,
+                  "id": 352,
+                  "nodeType": "Return",
+                  "src": "1439:41:6"
+                }
+              ]
+            },
+            "functionSelector": "c2bf17b0",
+            "id": 354,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "recover",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 341,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 334,
+                  "mutability": "mutable",
+                  "name": "digest",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1316:14:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 333,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1316:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 336,
+                  "mutability": "mutable",
+                  "name": "v",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1341:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 335,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1341:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 338,
+                  "mutability": "mutable",
+                  "name": "r",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1359:9:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 337,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1359:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 340,
+                  "mutability": "mutable",
+                  "name": "s",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1379:9:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 339,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1379:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1305:90:6"
+            },
+            "returnParameters": {
+              "id": 344,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 343,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 354,
+                  "src": "1419:7:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 342,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1419:7:6",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1418:9:6"
+            },
+            "scope": 355,
+            "src": "1289:199:6",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 356,
+        "src": "1259:232:6"
+      }
+    ],
+    "src": "1169:324:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-11-17T12:32:33.811Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

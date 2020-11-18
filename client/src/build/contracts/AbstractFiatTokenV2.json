@@ -1,0 +1,842 @@
+{
+  "contractName": "AbstractFiatTokenV2",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"allowance(address,address)\":{\"details\":\"Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called.\"},\"approve(address,uint256)\":{\"details\":\"Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event.\"},\"balanceOf(address)\":{\"details\":\"Returns the amount of tokens owned by `account`.\"},\"totalSupply()\":{\"details\":\"Returns the amount of tokens in existence.\"},\"transfer(address,uint256)\":{\"details\":\"Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v2/AbstractFiatTokenV2.sol\":\"AbstractFiatTokenV2\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v1/AbstractFiatTokenV1.sol\":{\"keccak256\":\"0x7352ab2c5f70324c8929d3981d4766613971b966bac82bf73683e0aa8125f8c7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cff5078de672d55ff9d9e0323b3ab14bfd9da727071deb86ca9dbe08da1515d2\",\"dweb:/ipfs/QmR7j7L2isb3mbUnKg6iLigKDwQBVmQF83FJs92gnE1qhu\"]},\"/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v2/AbstractFiatTokenV2.sol\":{\"keccak256\":\"0x06d9e1b66f2fbfde9e483ec9f96a701abaa1c5884233e944131245e076cb5fcc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b6a411ac162a9e3e0f4046ada9428bc55f2a07ac3cb211f10f2ea6d38fd4cee4\",\"dweb:/ipfs/QmWWwy9autXziWQxw7faZ5NbVvivKiaefbweevtSaQ7Kaf\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x7f9ec6bdfd2b1e231209d2d9d8c9649e4ac426580b79fcf1898b22dfca1c9ab6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1020946611acc54dda840ad5c7caddf156b1c27365ccd017fed8b923a2f51a0a\",\"dweb:/ipfs/QmSJ4bkABbCGayWhzBjw9MJkTZtAKoBuNQMj2v6vQQTqJU\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "/**\r\n * SPDX-License-Identifier: MIT\r\n *\r\n * Copyright (c) 2020 DYCLUDE\r\n *\r\n * Permission is hereby granted, free of charge, to any person obtaining a copy\r\n * of this software and associated documentation files (the \"Software\"), to deal\r\n * in the Software without restriction, including without limitation the rights\r\n * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n * copies of the Software, and to permit persons to whom the Software is\r\n * furnished to do so, subject to the following conditions:\r\n *\r\n * The above copyright notice and this permission notice shall be included in\r\n * copies or substantial portions of the Software.\r\n *\r\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n * SOFTWARE.\r\n */\r\n\r\npragma solidity >=0.4.22 <0.8.0;\r\n\r\nimport { AbstractFiatTokenV1 } from \"../v1/AbstractFiatTokenV1.sol\";\r\n\r\nabstract contract AbstractFiatTokenV2 is AbstractFiatTokenV1 {\r\n    function _increaseAllowance(\r\n        address owner,\r\n        address spender,\r\n        uint256 increment\r\n    ) internal virtual;\r\n\r\n    function _decreaseAllowance(\r\n        address owner,\r\n        address spender,\r\n        uint256 decrement\r\n    ) internal virtual;\r\n}\r\n",
+  "sourcePath": "C:\\Users\\ENCRYPTION.001\\Desktop\\Projects\\Dyclude\\PGS\\contracts\\v2\\AbstractFiatTokenV2.sol",
+  "ast": {
+    "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v2/AbstractFiatTokenV2.sol",
+    "exportedSymbols": {
+      "AbstractFiatTokenV1": [
+        1205
+      ],
+      "AbstractFiatTokenV2": [
+        2339
+      ]
+    },
+    "id": 2340,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2316,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1169:32:24"
+      },
+      {
+        "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v1/AbstractFiatTokenV1.sol",
+        "file": "../v1/AbstractFiatTokenV1.sol",
+        "id": 2318,
+        "nodeType": "ImportDirective",
+        "scope": 2340,
+        "sourceUnit": 1206,
+        "src": "1205:68:24",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2317,
+              "name": "AbstractFiatTokenV1",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "1214:19:24",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2319,
+              "name": "AbstractFiatTokenV1",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1205,
+              "src": "1318:19:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AbstractFiatTokenV1_$1205",
+                "typeString": "contract AbstractFiatTokenV1"
+              }
+            },
+            "id": 2320,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1318:19:24"
+          }
+        ],
+        "contractDependencies": [
+          1205,
+          5100
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": false,
+        "id": 2339,
+        "linearizedBaseContracts": [
+          2339,
+          1205,
+          5100
+        ],
+        "name": "AbstractFiatTokenV2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 2329,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_increaseAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2327,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2322,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2329,
+                  "src": "1383:13:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2321,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1383:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2324,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2329,
+                  "src": "1407:15:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2323,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1407:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2326,
+                  "mutability": "mutable",
+                  "name": "increment",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2329,
+                  "src": "1433:17:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2325,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1433:7:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1372:85:24"
+            },
+            "returnParameters": {
+              "id": 2328,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1474:0:24"
+            },
+            "scope": 2339,
+            "src": "1345:130:24",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          },
+          {
+            "id": 2338,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_decreaseAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2336,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2331,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2338,
+                  "src": "1521:13:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2330,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1521:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2333,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2338,
+                  "src": "1545:15:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2332,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1545:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2335,
+                  "mutability": "mutable",
+                  "name": "decrement",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2338,
+                  "src": "1571:17:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2334,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1571:7:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1510:85:24"
+            },
+            "returnParameters": {
+              "id": 2337,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1612:0:24"
+            },
+            "scope": 2339,
+            "src": "1483:130:24",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2340,
+        "src": "1277:339:24"
+      }
+    ],
+    "src": "1169:449:24"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v2/AbstractFiatTokenV2.sol",
+    "exportedSymbols": {
+      "AbstractFiatTokenV1": [
+        1205
+      ],
+      "AbstractFiatTokenV2": [
+        2339
+      ]
+    },
+    "id": 2340,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2316,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1169:32:24"
+      },
+      {
+        "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v1/AbstractFiatTokenV1.sol",
+        "file": "../v1/AbstractFiatTokenV1.sol",
+        "id": 2318,
+        "nodeType": "ImportDirective",
+        "scope": 2340,
+        "sourceUnit": 1206,
+        "src": "1205:68:24",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 2317,
+              "name": "AbstractFiatTokenV1",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "1214:19:24",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2319,
+              "name": "AbstractFiatTokenV1",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1205,
+              "src": "1318:19:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AbstractFiatTokenV1_$1205",
+                "typeString": "contract AbstractFiatTokenV1"
+              }
+            },
+            "id": 2320,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1318:19:24"
+          }
+        ],
+        "contractDependencies": [
+          1205,
+          5100
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": false,
+        "id": 2339,
+        "linearizedBaseContracts": [
+          2339,
+          1205,
+          5100
+        ],
+        "name": "AbstractFiatTokenV2",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 2329,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_increaseAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2327,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2322,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2329,
+                  "src": "1383:13:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2321,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1383:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2324,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2329,
+                  "src": "1407:15:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2323,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1407:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2326,
+                  "mutability": "mutable",
+                  "name": "increment",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2329,
+                  "src": "1433:17:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2325,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1433:7:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1372:85:24"
+            },
+            "returnParameters": {
+              "id": 2328,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1474:0:24"
+            },
+            "scope": 2339,
+            "src": "1345:130:24",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          },
+          {
+            "id": 2338,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_decreaseAllowance",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2336,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2331,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2338,
+                  "src": "1521:13:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2330,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1521:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2333,
+                  "mutability": "mutable",
+                  "name": "spender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2338,
+                  "src": "1545:15:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2332,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1545:7:24",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2335,
+                  "mutability": "mutable",
+                  "name": "decrement",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2338,
+                  "src": "1571:17:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2334,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1571:7:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1510:85:24"
+            },
+            "returnParameters": {
+              "id": 2337,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1612:0:24"
+            },
+            "scope": 2339,
+            "src": "1483:130:24",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2340,
+        "src": "1277:339:24"
+      }
+    ],
+    "src": "1169:449:24"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-11-17T15:55:55.026Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "allowance(address,address)": {
+        "details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
+      },
+      "approve(address,uint256)": {
+        "details": "Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event."
+      },
+      "balanceOf(address)": {
+        "details": "Returns the amount of tokens owned by `account`."
+      },
+      "totalSupply()": {
+        "details": "Returns the amount of tokens in existence."
+      },
+      "transfer(address,uint256)": {
+        "details": "Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
+      },
+      "transferFrom(address,address,uint256)": {
+        "details": "Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

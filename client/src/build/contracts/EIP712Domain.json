@@ -1,0 +1,219 @@
+{
+  "contractName": "EIP712Domain",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "DOMAIN_SEPARATOR",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"stateVariables\":{\"DOMAIN_SEPARATOR\":{\"details\":\"EIP712 Domain Separator\"}},\"title\":\"EIP712 Domain\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v2/upgrader/EIP712Domain.sol\":\"EIP712Domain\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v2/upgrader/EIP712Domain.sol\":{\"keccak256\":\"0xb40b1c768cd6dfb953c19bf6240cedc5b4c5aca21256d2c9e18211788c94bbc7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6030fc0bc4ec6df329298cfc3fe5816ef44bba43bcdc7d5320f5ca1c84e79b47\",\"dweb:/ipfs/QmTatCt5qda9pBvWu8ABujYaoCMmDPfL4SeZ2aoxzGZgGT\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b5060858061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80633644e51514602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea264697066735822122058f88245f79a92c6a40d4aae7a8858a8eaecf83f45091c03e35ba1e40597dfb264736f6c63430007040033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c80633644e51514602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea264697066735822122058f88245f79a92c6a40d4aae7a8858a8eaecf83f45091c03e35ba1e40597dfb264736f6c63430007040033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "1240:119:29:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "1240:119:29:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1324:31;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "/**\r\n * SPDX-License-Identifier: MIT\r\n *\r\n * Copyright (c) 2020 DYCLUDE\r\n *\r\n * Permission is hereby granted, free of charge, to any person obtaining a copy\r\n * of this software and associated documentation files (the \"Software\"), to deal\r\n * in the Software without restriction, including without limitation the rights\r\n * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\r\n * copies of the Software, and to permit persons to whom the Software is\r\n * furnished to do so, subject to the following conditions:\r\n *\r\n * The above copyright notice and this permission notice shall be included in\r\n * copies or substantial portions of the Software.\r\n *\r\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n * SOFTWARE.\r\n */\r\n\r\npragma solidity >=0.4.22 <0.8.0;\r\n\r\n/**\r\n * @title EIP712 Domain\r\n */\r\ncontract EIP712Domain {\r\n    /**\r\n     * @dev EIP712 Domain Separator\r\n     */\r\n    bytes32 public DOMAIN_SEPARATOR;\r\n}\r\n",
+  "sourcePath": "C:\\Users\\ENCRYPTION.001\\Desktop\\Projects\\Dyclude\\PGS\\contracts\\v2\\upgrader\\EIP712Domain.sol",
+  "ast": {
+    "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v2/upgrader/EIP712Domain.sol",
+    "exportedSymbols": {
+      "EIP712Domain": [
+        3597
+      ]
+    },
+    "id": 3598,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3592,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1169:32:29"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 3593,
+          "nodeType": "StructuredDocumentation",
+          "src": "1205:33:29",
+          "text": " @title EIP712 Domain"
+        },
+        "fullyImplemented": true,
+        "id": 3597,
+        "linearizedBaseContracts": [
+          3597
+        ],
+        "name": "EIP712Domain",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "documentation": {
+              "id": 3594,
+              "nodeType": "StructuredDocumentation",
+              "src": "1269:49:29",
+              "text": " @dev EIP712 Domain Separator"
+            },
+            "functionSelector": "3644e515",
+            "id": 3596,
+            "mutability": "mutable",
+            "name": "DOMAIN_SEPARATOR",
+            "nodeType": "VariableDeclaration",
+            "scope": 3597,
+            "src": "1324:31:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 3595,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1324:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 3598,
+        "src": "1240:119:29"
+      }
+    ],
+    "src": "1169:192:29"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/ENCRYPTION.001/Desktop/Projects/Dyclude/PGS/contracts/v2/upgrader/EIP712Domain.sol",
+    "exportedSymbols": {
+      "EIP712Domain": [
+        3597
+      ]
+    },
+    "id": 3598,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3592,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1169:32:29"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 3593,
+          "nodeType": "StructuredDocumentation",
+          "src": "1205:33:29",
+          "text": " @title EIP712 Domain"
+        },
+        "fullyImplemented": true,
+        "id": 3597,
+        "linearizedBaseContracts": [
+          3597
+        ],
+        "name": "EIP712Domain",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "documentation": {
+              "id": 3594,
+              "nodeType": "StructuredDocumentation",
+              "src": "1269:49:29",
+              "text": " @dev EIP712 Domain Separator"
+            },
+            "functionSelector": "3644e515",
+            "id": 3596,
+            "mutability": "mutable",
+            "name": "DOMAIN_SEPARATOR",
+            "nodeType": "VariableDeclaration",
+            "scope": 3597,
+            "src": "1324:31:29",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 3595,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1324:7:29",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "public"
+          }
+        ],
+        "scope": 3598,
+        "src": "1240:119:29"
+      }
+    ],
+    "src": "1169:192:29"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-11-17T15:55:57.266Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "stateVariables": {
+      "DOMAIN_SEPARATOR": {
+        "details": "EIP712 Domain Separator"
+      }
+    },
+    "title": "EIP712 Domain",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

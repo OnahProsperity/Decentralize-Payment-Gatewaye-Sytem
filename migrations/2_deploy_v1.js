@@ -29,11 +29,11 @@ module.exports = async (deployer, network, [addresses]) => {
     // DO NOT USE THESE ADDRESSES IN PRODUCTION - these are the deterministic
     // addresses from ganache, so the private keys are well known and match the
     // values we use in the tests
-    proxyAdminAddress = "0x8AB4c210064613Af6326f800ACA3cb6f3375ed69";
-    ownerAddress = "0x1a49771C2FcdF90A49cD2Bc946Fb878AF3E2F351";
-    masterMinterAddress = "0x9a983C1DAEf891e9c45fa8Ee2A3381770c01795a";
-    pauserAddress = "0xdF92105DB06310dB62BAD84086c2F45Bc4564514";
-    blacklisterAddress = "0x12f6F06CD20f0d75e3fcD4D8bc8c736bBBd2b397";
+    proxyAdminAddress = "0x11C5537E028E0B14f0A4D1B4B6ff7804399CDe78";
+    ownerAddress = "0xFa9cAEe1F3AaFfaB5bE0A3807677D44E724e026d";
+    masterMinterAddress = "0xE5279Fe384CafCfc02e1d85D0857aFC9C20466c5";
+    pauserAddress = "0x1FA324546678257a150AB53ccB224c35875587E5";
+    blacklisterAddress = "0x791DC4B3bd0918ec710035aDe7fd637ad74C13B5";
   }
 
   console.log(`Proxy Admin:   ${proxyAdminAddress}`);
@@ -86,9 +86,9 @@ module.exports = async (deployer, network, [addresses]) => {
   // proxy will forward all the calls to the FiatTokenV1 impl
   const proxyAsV1 = await FiatTokenV1.at(FiatTokenProxy.address);
   await proxyAsV1.initialize(
-    "USD//C",
-    "USDC",
-    "USD",
+    "DYCLUDE TOKEN",
+    "DYNGN",
+    "NGN",
     6,
     masterMinterAddress,
     pauserAddress,
@@ -96,3 +96,4 @@ module.exports = async (deployer, network, [addresses]) => {
     ownerAddress
   );
 };
+
