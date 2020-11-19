@@ -1,5 +1,5 @@
 const { Transaction } = require("ethereumjs-tx");
-const wrapTests = require("./helpers/wrapTests");
+const wrapTests = require("./wrapTests");
 const {
   expectRevert,
   checkVariables,
@@ -10,7 +10,7 @@ const {
   arbitraryAccountPrivateKey,
   tokenOwnerPrivateKey,
   pauserAccountPrivateKey,
-} = require("./helpers/tokenTest");
+} = require("./tokenTest");
 const {
   makeRawTransaction,
   sendRawTransaction,
@@ -18,7 +18,7 @@ const {
   encodeAddress,
   encodeUint,
   msgData,
-} = require("./helpers/abi");
+} = require("./abiTest");
 
 // Encodes methodName, 32 byte string of 0, and address.
 function mockStringAddressEncode(methodName, address) {

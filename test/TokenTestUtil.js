@@ -22,7 +22,8 @@ const trueInStorageFormat = "0x01";
 const bigZero = new BN(0);
 const bigHundred = new BN(100);
 
-const nullAccount = "0x00";
+// TODO: test really big numbers  Does this still have to be done??
+
 const deployerAccount = "0x0D8bE431C1a7C8ED1DeB3fca253e164cDD692513"; // accounts[0]
 const arbitraryAccount = "0x8640051305a2543aC9037b1BA112Ad6DFCc87144"; // accounts[1]
 const tokenOwnerAccount = "0xE742F01A2a121791d90e07c04911e7f943dcC8b1"; // accounts[2]
@@ -54,6 +55,7 @@ const pauserAccountPrivateKey =
 const proxyOwnerAccountPrivateKey =
   "d69899f572be4edca3111e6bcf7f362af4850de9e928bec00e31048f1406fe4c"; // accounts[8]
 const upgraderAccountPrivateKey = proxyOwnerAccountPrivateKey;
+// var blacklisterAccountPrivateKey = "b0057716d5917badaf911b193b12b910811c1497b5bada8d7711f758981c3773"; // accounts[9]
 
 const adminSlot =
   "a59e5e54223e8d6f7d3c7746862af9c81cd0a23af04979013df99e97862cd181"; //account 9
@@ -61,7 +63,7 @@ const implSlot =
   "6132e6ae7cceb6b831df6b2d4feb99ea54e505fe27743e21e4e19e4543ff1e77"; //ACOUNTS [10]
 
 // set to true to enable verbose logging in the tests
-const debugLogging = true;
+const debugLogging = false;
 
 function calculateFeeAmount(amount, fee, feeBase) {
   return Math.floor((fee / feeBase) * amount);
@@ -346,6 +348,7 @@ function buildExpectedState(token, customVars) {
         );
       }
     } else {
+      // TODO: test the error
       throw new Error(
         "variable " + customVars[i].variable + " not found in expectedState"
       );
@@ -782,7 +785,7 @@ async function sampleTransfer(token, ownerAccount, arbitraryAccount, minter) {
   assert.isTrue(new BN(allowed).eqn(0));
   await mint(token, ownerAccount, 1900, minter);
 
-  await token.approve(arbitraryAccount, 1500, { from: ownerAccount });
+  await token.approve(arbitraryAccount, 1500);
   allowed = await token.allowance.call(ownerAccount, arbitraryAccount);
   assert.isTrue(new BN(allowed).eqn(1500));
 
@@ -804,19 +807,21 @@ async function sampleTransferFrom(
   arbitraryAccount,
   minter
 ) {
-  let allowed = await token.allowance.call(ownerAccount, arbitraryAccount);
+  let allowed = await token.allowance.call(ownerAccount, arbitraryAccount); // TODO not this
   assert.isTrue(new BN(allowed).eqn(0));
-  await mint(token, ownerAccount, 900, minter);
-  await token.approve(arbitraryAccount, 634, { from: ownerAccount });
-  allowed = await token.allowance.call(ownerAccount, arbitraryAccount);
+  await mint(token, ownerAccount, 900, minter); // TODO maybe this
+  await token.approve(arbitraryAccount, 634); // TODO not this
+  allowed = await token.allowance.call(ownerAccount, arbitraryAccount); // TODO not this
   assert.isTrue(new BN(allowed).eqn(634));
 
   const transfer = await token.transferFrom(
     ownerAccount,
     arbitraryAccount,
     534,
-    { from: arbitraryAccount }
-  );
+    {
+      from: arbitraryAccount,
+    }
+  ); // TODO not this
 
   checkTransferEvents(transfer, ownerAccount, arbitraryAccount, 534);
 

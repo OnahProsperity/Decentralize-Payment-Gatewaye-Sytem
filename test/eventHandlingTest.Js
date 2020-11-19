@@ -1,4 +1,4 @@
-const wrapTests = require("./helpers/wrapTests");
+const wrapTests = require("./wrapTests");
 const {
   FiatTokenV1,
   minterAccount,
@@ -28,7 +28,7 @@ const {
   UpgradedFiatTokenNewFields,
   checkPauseEvent,
   checkTransferEvents,
-} = require("./helpers/tokenTest");
+} = require("./tokenTest");
 
 const amount = 100;
 

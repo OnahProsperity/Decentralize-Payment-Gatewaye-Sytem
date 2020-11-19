@@ -17,10 +17,10 @@ if (fs.existsSync(path.join(__dirname, "..", "config.js"))) {
   } = require("../config.js"));
 }
 
-module.exports = async (deployer, network) => {
+module.exports = async (deployer, network, [accounts]) => {
   if (some(["development", "coverage"], (v) => network.includes(v))) {
     // DO NOT USE THIS ADDRESS IN PRODUCTION
-    proxyAdminAddress = "0x2F560290FEF1B3Ada194b6aA9c40aa71f8e95598";
+    proxyAdminAddress = "0x11C5537E028E0B14f0A4D1B4B6ff7804399CDe78";
     proxyContractAddress = (await FiatTokenProxy.deployed()).address;
   }
   proxyContractAddress =
@@ -43,7 +43,7 @@ module.exports = async (deployer, network) => {
     proxyContractAddress,
     fiatTokenV2.address,
     proxyAdminAddress,
-    "USD Coin"
+    "DYCLUDE COIN"
   );
 
   console.log(`>>>>>>> Deployed V2Upgrader at ${v2Upgrader.address} <<<<<<<`);
